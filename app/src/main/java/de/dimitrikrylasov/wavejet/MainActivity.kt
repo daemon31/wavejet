@@ -1,10 +1,10 @@
-package de.syntaxinstitut.myapplication
+package de.dimitrikrylasov.wavejet
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
-import de.syntaxinstitut.myapplication.databinding.ActivityMainBinding
+import de.dimitrikrylasov.wavejet.databinding.ActivityMainBinding
 
 /**
  * Main Activity, dient als Einstiegspunkt für die App
@@ -21,25 +21,11 @@ class MainActivity : AppCompatActivity() {
 
     /**
      * Lifecycle Methode, wird aufgerufen wenn Activity erstellt wird
-     *
-     * @param savedInstanceState      Save state vom view
      */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         // Das Binding zur XML-Datei
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-
-//        navController = findNavController(R.id.main_fragment)
-//
-//        setupActionBarWithNavController(navController)
-    }
-
-//    override fun onSupportNavigateUp(): Boolean {
-//        return navController.navigateUp() || super.onSupportNavigateUp()
-//    }
-
-    fun setToolBar(title: String) {
-        binding.toolbarText.text = title
     }
 }

@@ -3,16 +3,15 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
     id 'androidx.navigation.safeargs.kotlin'
-    id 'kotlin-parcelize'
 }
 
 android {
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
-        applicationId "de.syntaxinstitut.myapplication"
+        applicationId "de.dimitrikrylasov.wavejet"
         minSdk 21
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -33,7 +32,7 @@ android {
         jvmTarget = '1.8'
     }
 
-    // View Binding aktivieren
+    // Data Binding aktivieren
     buildFeatures {
         dataBinding true
     }
@@ -41,8 +40,8 @@ android {
 
 dependencies {
     // Standard Bibliotheken
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.4.2'
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     testImplementation 'junit:junit:4.13.2'
@@ -52,13 +51,6 @@ dependencies {
     // Navigation Graph
     implementation "androidx.navigation:navigation-fragment-ktx:$navigation_graph"
     implementation "androidx.navigation:navigation-ui-ktx:$navigation_graph"
-
-    // ViewModel
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$view_model"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$view_model"
-
-    // Preferences
-    implementation "androidx.preference:preference:$preferences"
 
     // Database
     implementation "androidx.room:room-runtime:$room_version"

@@ -1,21 +1,19 @@
-package de.syntaxinstitut.myapplication.ui.one
+package de.dimitrikrylasov.wavejet.ui.one
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
-import de.syntaxinstitut.myapplication.MainActivity
-import de.syntaxinstitut.myapplication.R
-import de.syntaxinstitut.myapplication.databinding.FragmentOneBinding
+import de.dimitrikrylasov.wavejet.MainViewModel
+import de.dimitrikrylasov.wavejet.databinding.FragmentOneBinding
 
 /**
  * Fragment 1
  */
-class OneFragment : Fragment(R.layout.fragment_one) {
+class OneFragment : Fragment() {
 
     /* -------------------- Klassen Variablen -------------------- */
 
@@ -23,37 +21,25 @@ class OneFragment : Fragment(R.layout.fragment_one) {
     private lateinit var binding: FragmentOneBinding
 
     /** Das ViewModel zu diesem Fragment */
-    private val viewModel: OneViewModel by viewModels()
+    private val viewModel: MainViewModel by activityViewModels()
 
     /* -------------------- Lifecycle -------------------- */
 
     /**
      * Lifecycle Methode wenn das View erstellt wird
-     *
-     * @param inflater                Layout Inflater
-     * @param container               View Gruppe
-     * @param savedInstanceState      Eventuelle saveStates
      */
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_one, container, false)
+        binding = FragmentOneBinding.inflate(inflater)
 
         return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        (activity as MainActivity).setToolBar("home")
-    }
-
     /**
      * Lifecycle Methode nachdem das View erstellt wurde
-     *
-     * @param view                    Das angezeigte View
-     * @param savedInstanceState      Eventuelle saveStates
      */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

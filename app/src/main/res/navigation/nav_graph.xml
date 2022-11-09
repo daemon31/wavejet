@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/oneFragment"
-        android:name="de.syntaxinstitut.myapplication.ui.one.OneFragment"
+        android:name="de.dimitrikrylasov.wavejet.ui.one.OneFragment"
         android:label="Home"
         tools:layout="@layout/fragment_one">
         <action
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/twoFragment"
-        android:name="de.syntaxinstitut.myapplication.ui.two.TwoFragment"
+        android:name="de.dimitrikrylasov.wavejet.ui.two.TwoFragment"
         android:label="Detail"
         tools:layout="@layout/fragment_two" />
 </navigation>

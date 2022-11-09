@@ -1,20 +1,18 @@
-package de.syntaxinstitut.myapplication.ui.two
+package de.dimitrikrylasov.wavejet.ui.two
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
-import de.syntaxinstitut.myapplication.MainActivity
-import de.syntaxinstitut.myapplication.R
-import de.syntaxinstitut.myapplication.databinding.FragmentTwoBinding
+import androidx.fragment.app.activityViewModels
+import de.dimitrikrylasov.wavejet.MainViewModel
+import de.dimitrikrylasov.wavejet.databinding.FragmentTwoBinding
 
 /**
  * Fragment 2
  */
-class TwoFragment : Fragment(R.layout.fragment_two) {
+class TwoFragment : Fragment() {
 
     /* -------------------- Klassen Variablen -------------------- */
 
@@ -22,7 +20,7 @@ class TwoFragment : Fragment(R.layout.fragment_two) {
     private lateinit var binding: FragmentTwoBinding
 
     /** Das ViewModel zu diesem Fragment */
-    private val viewModel: TwoViewModel by viewModels()
+    private val viewModel: MainViewModel by activityViewModels()
 
     /* -------------------- Lifecycle -------------------- */
     /**
@@ -37,16 +35,8 @@ class TwoFragment : Fragment(R.layout.fragment_two) {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
-
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_two, container, false)
+        binding = FragmentTwoBinding.inflate(inflater)
 
         return binding.root
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        (activity as MainActivity).setToolBar("detail")
-
     }
 }

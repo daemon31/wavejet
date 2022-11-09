@@ -1,13 +1,13 @@
-package de.syntaxinstitut.myapplication.ui.one
+package de.dimitrikrylasov.wavejet
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 
 /**
- * Das ViewModel des One Fragments
+ * Das MainViewModel
  */
-class OneViewModel(application: Application) : AndroidViewModel(application) {
+class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     /* -------------------- Klassen Variablen -------------------- */
 	
